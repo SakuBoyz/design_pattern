@@ -77,7 +77,7 @@ class Relationships implements RelationshipBrowser {
         relations.add(new Triplet<>(parent, Relationship.PARENT, child));
         relations.add(new Triplet<>(child, Relationship.CHILD, parent));
     }
-
+    
     public List<Person> findAllChildrenOf(String name) {
         return relations.stream()
                 .filter(x -> Objects.equals(x.getValue0().name, name)
