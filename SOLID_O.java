@@ -72,9 +72,7 @@ interface Filter<T> {
 class BetterFilter implements Filter<Product> {
     @Override
 
-    public Stream<Product> filter(List<Product> items, Specification<Product> spec)
-
-    {
+    public Stream<Product> filter(List<Product> items, Specification<Product> spec) {
         return items.stream().filter(p -> spec.isSatisfied(p));
     }
 }
