@@ -78,11 +78,7 @@ class ExpressionPrinter implements ExpressionVisitor {
 
     @Override
     public void visit(DoubleExpression e) {
-    }
-
-    @Override
-    public String toString() {
-        return sb.toString();
+        sb.append(e.value);
     }
 
     @Override
@@ -100,6 +96,11 @@ class ExpressionPrinter implements ExpressionVisitor {
         }
         e.right.accept(this);
         sb.append(")");
+    }
+
+    @Override
+    public String toString() {
+        return sb.toString();
     }
 }
 
